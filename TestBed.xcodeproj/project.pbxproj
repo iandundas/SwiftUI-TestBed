@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C33720D25FBBB9B0020C675 /* AddCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33720C25FBBB9B0020C675 /* AddCollectionView.swift */; };
+		3C33720F25FBC2A90020C675 /* BottomRightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33720E25FBC2A90020C675 /* BottomRightButton.swift */; };
 		3C66EEFC25FB8767004ED639 /* TestBedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C66EEFB25FB8767004ED639 /* TestBedApp.swift */; };
 		3C66EEFE25FB8767004ED639 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C66EEFD25FB8767004ED639 /* ContentView.swift */; };
 		3C66EF0025FB8768004ED639 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C66EEFF25FB8768004ED639 /* Assets.xcassets */; };
 		3C66EF0325FB8768004ED639 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C66EF0225FB8768004ED639 /* Preview Assets.xcassets */; };
 		3C66EF0E25FB8768004ED639 /* TestBedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C66EF0D25FB8768004ED639 /* TestBedTests.swift */; };
 		3C66EF1925FB8768004ED639 /* TestBedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C66EF1825FB8768004ED639 /* TestBedUITests.swift */; };
+		3C66EF2725FB9147004ED639 /* NeomorphicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C66EF2625FB9147004ED639 /* NeomorphicButton.swift */; };
+		3C66EF2B25FB91CE004ED639 /* ModalListTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C66EF2A25FB91CE004ED639 /* ModalListTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C33720C25FBBB9B0020C675 /* AddCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionView.swift; sourceTree = "<group>"; };
+		3C33720E25FBC2A90020C675 /* BottomRightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRightButton.swift; sourceTree = "<group>"; };
 		3C66EEF825FB8767004ED639 /* TestBed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestBed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C66EEFB25FB8767004ED639 /* TestBedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBedApp.swift; sourceTree = "<group>"; };
 		3C66EEFD25FB8767004ED639 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +51,8 @@
 		3C66EF1425FB8768004ED639 /* TestBedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestBedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C66EF1825FB8768004ED639 /* TestBedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBedUITests.swift; sourceTree = "<group>"; };
 		3C66EF1A25FB8768004ED639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C66EF2625FB9147004ED639 /* NeomorphicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeomorphicButton.swift; sourceTree = "<group>"; };
+		3C66EF2A25FB91CE004ED639 /* ModalListTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalListTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,10 @@
 				3C66EEFF25FB8768004ED639 /* Assets.xcassets */,
 				3C66EF0425FB8768004ED639 /* Info.plist */,
 				3C66EF0125FB8768004ED639 /* Preview Content */,
+				3C66EF2625FB9147004ED639 /* NeomorphicButton.swift */,
+				3C66EF2A25FB91CE004ED639 /* ModalListTestView.swift */,
+				3C33720C25FBBB9B0020C675 /* AddCollectionView.swift */,
+				3C33720E25FBC2A90020C675 /* BottomRightButton.swift */,
 			);
 			path = TestBed;
 			sourceTree = "<group>";
@@ -259,7 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C33720D25FBBB9B0020C675 /* AddCollectionView.swift in Sources */,
 				3C66EEFE25FB8767004ED639 /* ContentView.swift in Sources */,
+				3C66EF2725FB9147004ED639 /* NeomorphicButton.swift in Sources */,
+				3C33720F25FBC2A90020C675 /* BottomRightButton.swift in Sources */,
+				3C66EF2B25FB91CE004ED639 /* ModalListTestView.swift in Sources */,
 				3C66EEFC25FB8767004ED639 /* TestBedApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
