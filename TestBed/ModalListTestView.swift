@@ -7,26 +7,102 @@
 
 import SwiftUI
 
+struct CellView: View {
+    let text: String
+    @State private var pushed = false
+
+    var body: some View {
+        HStack {
+            NavigationLink(
+                destination:
+                    EditCollectionView(isAdding: false, name: text),
+                isActive: $pushed,
+                label: {
+                    Text(text).font(.title3)
+                })
+
+            Spacer()
+
+
+            Button(action: {
+                print("Apply \(text)")
+            }, label: {
+                Image(systemName: "checkmark.circle")
+            }).buttonStyle(PlainButtonStyle())
+        }
+    }
+}
+
+struct BlueAddButtonView: View {
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .fill(Color.blue)
+                .shadow(color: Color.white.opacity(0.3), radius: 3, x: 1, y: 1)
+                .shadow(color: Color.blue.opacity(0.3), radius: 10, x: 1, y: 1)
+
+            Image(systemName: "plus")
+                .foregroundColor(Color.white)
+                .font(.system(size: 30, weight: .regular))
+        }
+        .frame(width: 55, height: 55)
+    }
+}
+
 struct CollectionListView: View {
     @Environment(\.presentationMode) var presentationMode
 
-    @State private var refresh = UUID() // https://stackoverflow.com/questions/65126986/swiftui-bottombar-toolbar-disappears-when-going-back/65127277#65127277
-
     var body: some View {
         NavigationView {
+            ZStack {
+                List {
+                    Section {
+                        Text("Show all Tacks")
+                    }
+//                    Section(header: Text("Filter by a single collection:")) {
+//                        ForEach(1..<51) { i in
+//                            CellView(text: "Amsterdam")
+//                        }.onDelete(perform: { x in
+//                        })
+//                    }
+                }
+                .listStyle(GroupedListStyle())
 
-            List {
-                ForEach(1..<300) { i in
-                    NavigationLink(
-                        destination: EditCollectionView(isAdding: false, name: "Amsterdam").onDisappear { refresh = UUID() },
-                        label: {
-                            Text("Amsterdam")
-                                .font(.title3)
-                        })
+                if true {
 
-                }.onDelete(perform: { x in
-                })
-            }.navigationTitle("Collections")
+                    Text("Collections are a handy way to group your Tacks. \n\ne.g. Amsterdam, New York, etc")
+                        .foregroundColor(Color.primary)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 50)
+                        .padding(.vertical, 50)
+                        .background(
+                            ZStack {
+                                Rectangle()
+                                    .fill(Color.white)
+                                    .cornerRadius(10)
+                                    .shadow(color: .black.opacity(0.05), radius: 4, x: 2, y: 2)
+
+                            }
+                            .padding(16)
+                        )
+
+
+                }
+
+                VStack(alignment: .trailing) {
+                    Spacer()
+                    HStack() {
+                        Spacer()
+                        NavigationLink (
+                            destination: EditCollectionView(isAdding: true, name: "")) {
+                                BlueAddButtonView()
+                            }
+                            .padding(.trailing, 16)
+                    }
+                }
+            }
+            .navigationTitle("Collections")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button (action: {
@@ -35,17 +111,9 @@ struct CollectionListView: View {
                         Text("Close")
                     })
                 }
-                ToolbarItemGroup(placement: ToolbarItemPlacement.bottomBar) {
-                    EditButton()
-                    Spacer()
-                    Button (action: {
-                        print("Help tapped!")
-                    }, label: {
-                        Image(systemName: "plus")
-                    })
-                }
-            }.id(refresh)
-        }.navigationViewStyle(StackNavigationViewStyle())
+            }
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -73,4 +141,11 @@ struct ModalListTestView_Previews: PreviewProvider {
     static var previews: some View {
         ModalListTestView()
     }
+}
+
+func ??<T>(lhs: Binding<Optional<T>>, rhs: T) -> Binding<T> {
+    Binding(
+        get: { lhs.wrappedValue ?? rhs },
+        set: { lhs.wrappedValue = $0 }
+    )
 }

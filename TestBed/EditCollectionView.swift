@@ -9,26 +9,39 @@ import SwiftUI
 
 struct EditCollectionView: View {
     @State var isAdding: Bool
-    @State var name: String
+    @State var name: String?
     @State private var hasFilledCredentials = true
 
     var body: some View {
         Form {
             Text("A collection is a named group of Tacks. For example, for a city, or for a holiday.")
             Section() {
-                TextField("Name", text: $name)
+                TextField("Name", text: $name ?? "")
             }
 
             Section {
-                Button("Save changes") {
-                    // activate theme!
+                Button("Save") {
+                    
                 }
             }
-        }.navigationTitle( (isAdding ? "Add" : "Edit") + " Collection" )
+        }
+        .navigationTitle( (isAdding ? "Add" : "Edit") + " Collection" )
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Button (action: {
+                    print("Help tapped!")
+                }, label: {
+                    Text("Use")
+                })
+            }
+        }
+        .onChange(of: name, perform: { _ in
+            print("new value: \(name)")
+        })
     }
 }
 
-struct AddCollectionView_Previews: PreviewProvider {
+struct EditCollectionView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             EditCollectionView(isAdding: true, name: "")

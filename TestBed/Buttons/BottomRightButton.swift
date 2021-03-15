@@ -7,12 +7,9 @@
 
 import SwiftUI
 
-
-
-
 struct BottomRightButton: View {
     var body: some View {
-        
+
         NavigationView {
             ZStack {
                 List {
@@ -30,9 +27,9 @@ struct BottomRightButton: View {
                                 ZStack {
                                     Circle()
                                         .fill(Color.blue)
-                                        .shadow(color: .white.opacity(0.3), radius: 3, x: 1, y: 1)
-                                        .shadow(color: .blue.opacity(0.3), radius: 10, x: 1, y: 1)
-                                    
+                                        .shadow(color: Color.white.opacity(0.3), radius: 3, x: 1, y: 1)
+                                        .shadow(color: Color.blue.opacity(0.3), radius: 10, x: 1, y: 1)
+
                                     Image(systemName: "plus")
                                         .foregroundColor(Color.white)
                                         .font(.system(size: 30, weight: .regular))
